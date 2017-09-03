@@ -181,8 +181,9 @@ MOV ECX, COUNT
 CMP AL, 10
 	JL translate_e1
 	translate_s1:
-		ADD AL, 55
+		ADD AL, 7
 	translate_e1:
+	ADD AL, 48
 	MOV [ESI], AL
 	INC ESI
 XOR AX, AX
@@ -191,14 +192,14 @@ HEX:
 	CMP BH, 10
 	JL translate_e2
 	translate_s2:
-		ADD BH, 55
+		ADD BH, 7
 	translate_e2:
+	ADD BH, 48
 	MOV [ESI], BH
 	INC ESI
 LOOP HEX
 
 ;______________________________________________________________________________________
-
 PUSH 0
 INC COUNT
 PUSH OFFSET COUNT
